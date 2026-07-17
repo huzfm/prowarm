@@ -1,26 +1,177 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Wipe Tailwind's default palette — this site uses its own tokens only. */
+  --color-*: initial;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #ffffff;
+  --color-black: #000000;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Warm copper accent */
+  --color-copper-50: #fbf6f0;
+  --color-copper-100: #f6e9da;
+  --color-copper-200: #ecd2b4;
+  --color-copper-300: #e1b389;
+  --color-copper-400: #d5945e;
+  --color-copper-500: #c8763a;
+  --color-copper-600: #b26030;
+  --color-copper-700: #904b27;
+  --color-copper-800: #713b21;
+  --color-copper-900: #59301c;
+  --color-copper-950: #30190e;
+
+  /* Deep warm charcoal */
+  --color-charcoal-50: #f6f5f4;
+  --color-charcoal-100: #e8e6e3;
+  --color-charcoal-200: #d1cdc7;
+  --color-charcoal-300: #b0aaa2;
+  --color-charcoal-400: #8a847b;
+  --color-charcoal-500: #6e6860;
+  --color-charcoal-600: #57524b;
+  --color-charcoal-700: #46423c;
+  --color-charcoal-800: #302d29;
+  --color-charcoal-900: #1a1a1a;
+  --color-charcoal-950: #111110;
+
+  /* Warm off-white */
+  --color-cream-50: #fdfcfa;
+  --color-cream-100: #faf7f2;
+  --color-cream-200: #f3ede2;
+  --color-cream-300: #e9dfcf;
+  --color-cream-400: #dcccb2;
+
+  --color-danger: #b3402a;
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 1.25rem;
+  --radius-field: 0.75rem;
+
+  --shadow-card: 0 1px 2px rgb(26 26 26 / 0.04), 0 8px 24px -8px rgb(26 26 26 / 0.1);
+  --shadow-card-hover: 0 2px 4px rgb(26 26 26 / 0.06), 0 24px 48px -12px rgb(26 26 26 / 0.18);
+  --shadow-glass: 0 8px 32px -12px rgb(17 17 16 / 0.35);
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 36s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    background-color: var(--color-cream-100);
+    color: var(--color-charcoal-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-copper-500);
+    color: var(--color-white);
+  }
+
+  /* Custom, clearly visible focus ring everywhere. */
+  :focus-visible {
+    outline: 2px solid var(--color-copper-500);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@utility container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 2rem;
+  }
+
+  @media (width >= 64rem) {
+    padding-inline: 3rem;
+  }
+}
+
+/* Type scale — one place, reused across every page. */
+@utility text-display-1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 2rem + 3.5vw, 5.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  font-weight: 560;
+}
+
+@utility text-display-2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.125rem, 1.6rem + 2.2vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 540;
+}
+
+@utility text-display-3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 2.125rem);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  font-weight: 520;
+}
+
+@utility text-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@utility text-lead {
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  line-height: 1.6;
 }
