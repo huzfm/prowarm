@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -51,7 +51,7 @@ export function Navbar() {
         <Link
           href="/"
           className="group flex items-center gap-2.5 pl-1 text-white"
-          aria-label={`${siteConfig.name} — home`}
+          aria-label={`${siteConfig.name}  home`}
         >
           <span className="relative grid size-9 place-items-center rounded-full bg-copper-500 transition-transform duration-500 ease-(--ease-out-quart) group-hover:scale-105">
             <span

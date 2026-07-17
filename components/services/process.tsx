@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
@@ -18,7 +18,7 @@ const steps = [
   },
   {
     title: "Installation",
-    text: "Our own crews — never subcontractors — install with the three-test discipline: every circuit resistance-tested before, during and after the floor goes down.",
+    text: "Our own crews  never subcontractors  install with the three-test discipline: every circuit resistance-tested before, during and after the floor goes down.",
     duration: "1–3 days per zone",
   },
   {
@@ -28,7 +28,7 @@ const steps = [
   },
   {
     title: "Aftercare for the long haul",
-    text: "10 years on electric systems, 25 on hydronic pipework — with our Mumbai engineering team on the phone, and annual health checks for hydronic homes.",
+    text: "10 years on electric systems, 25 on hydronic pipework  with our Mumbai engineering team on the phone, and annual health checks for hydronic homes.",
     duration: "Years 1–25",
   },
 ];

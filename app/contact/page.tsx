@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+﻿import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/contact-form";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
@@ -38,7 +38,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Talk to an engineer, not a call centre"
-        lead="Surveys are free, quotes are itemised, and questions are welcome even if you're just researching. Winter has a deadline — we work to it."
+        lead="Surveys are free, quotes are itemised, and questions are welcome even if you're just researching. Winter has a deadline  we work to it."
         image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2400&auto=format&fit=crop"
         imageAlt="Contemporary living space warmed by an underfloor heating system"
       />

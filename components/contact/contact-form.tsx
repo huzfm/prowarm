@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Send } from "lucide-react";
@@ -35,15 +35,15 @@ export function ContactForm() {
 
   async function onSubmit(values: ContactValues) {
     try {
-      // Simulated send — point this at your API route or form service later.
+      // Simulated send  point this at your API route or form service later.
       await new Promise((resolve) => setTimeout(resolve, 1100));
-      toast.success("Message sent — we'll reply within one working day", {
+      toast.success("Message sent  we'll reply within one working day", {
         description: `Thanks ${values.name.split(" ")[0]}, a survey engineer will be in touch at ${values.email}.`,
       });
       reset();
     } catch {
       toast.error("Something went wrong", {
-        description: "Please try again, or call us directly — we do pick up.",
+        description: "Please try again, or call us directly  we do pick up.",
       });
     }
   }
@@ -102,7 +102,7 @@ export function ContactForm() {
         <Textarea
           id="message"
           rows={6}
-          placeholder="Tell us about the rooms, floor finish and city — or just ask a question."
+          placeholder="Tell us about the rooms, floor finish and city  or just ask a question."
           aria-invalid={errors.message ? true : undefined}
           className="mt-2"
           {...register("message")}

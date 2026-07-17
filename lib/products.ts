@@ -1,4 +1,4 @@
-export type ProductCategory =
+﻿export type ProductCategory =
   | "electric"
   | "hydronic"
   | "thermostats"
@@ -41,11 +41,11 @@ export const products: Product[] = [
     price: "From ₹1,450 / m²",
     priceValue: 1450,
     description: [
-      "The StickyMat 200W is a self-adhesive electric heating mat engineered for the floors Indian homes actually have — vitrified tile, marble, granite and Kota stone. The twin-conductor cable is pre-spaced on an adhesive mesh, so it rolls out flat, sticks down without tape and tiles over directly with flexible adhesive.",
+      "The StickyMat 200W is a self-adhesive electric heating mat engineered for the floors Indian homes actually have  vitrified tile, marble, granite and Kota stone. The twin-conductor cable is pre-spaced on an adhesive mesh, so it rolls out flat, sticks down without tape and tiles over directly with flexible adhesive.",
       "At just 3 mm thick, it adds virtually no height to the floor build-up, making it ideal for renovations where door thresholds and finished levels are fixed. Paired with a SenseWarm thermostat, most bathrooms reach barefoot comfort in under 20 minutes.",
     ],
     features: [
-      "Self-adhesive mesh — no staples, no movement while tiling",
+      "Self-adhesive mesh  no staples, no movement while tiling",
       "3 mm ultra-thin twin-conductor cable, zero EMF design",
       "Warms tile and stone from cold in 15–25 minutes",
       "IPX7-rated, safe for bathrooms and wet rooms",
@@ -77,13 +77,13 @@ export const products: Product[] = [
     priceValue: 1150,
     description: [
       "Not every room is a rectangle. The FlexCable kit gives installers a free-form heating cable that snakes around curved shower trays, pillars, vanity units and heritage floor layouts where a fixed mat won't fit.",
-      "The cable clips into supplied fixing strips at whatever spacing your heat-loss calculation demands — tighter runs for a cold ground floor slab, wider for a well-insulated bedroom. It's the system our own engineers reach for on complex sites.",
+      "The cable clips into supplied fixing strips at whatever spacing your heat-loss calculation demands  tighter runs for a cold ground floor slab, wider for a well-insulated bedroom. It's the system our own engineers reach for on complex sites.",
     ],
     features: [
       "Routes around curves, columns and fixed furniture",
       "Adjustable spacing tunes output from 100–200 W/m²",
       "Single cold-tail connection for simple wiring",
-      "Embeds fully in levelling compound — no ridges under vinyl or laminate",
+      "Embeds fully in levelling compound  no ridges under vinyl or laminate",
       "10-year full-replacement warranty",
     ],
     specs: {
@@ -108,11 +108,11 @@ export const products: Product[] = [
     price: "From ₹1,650 / m²",
     priceValue: 1650,
     description: [
-      "WarmFoil is a completely dry installation — no adhesive, no levelling compound, no waiting. The aluminium foil heater rolls out over insulation underlay, the laminate or engineered wood floor floats directly on top, and the room is heatable the same day.",
+      "WarmFoil is a completely dry installation  no adhesive, no levelling compound, no waiting. The aluminium foil heater rolls out over insulation underlay, the laminate or engineered wood floor floats directly on top, and the room is heatable the same day.",
       "The foil spreads heat evenly across the whole surface, eliminating the striping that cheap cable systems can telegraph through thin floor finishes. Gentle, even warmth that engineered timber manufacturers approve.",
     ],
     features: [
-      "100% dry fit — floor down and warm in a single day",
+      "100% dry fit  floor down and warm in a single day",
       "Even, stripe-free heat under thin floor finishes",
       "Earthed aluminium construction for total safety",
       "Compatible with click-lock laminate and engineered wood up to 18 mm",
@@ -141,11 +141,11 @@ export const products: Product[] = [
     price: "From ₹2,100 / m²",
     priceValue: 2100,
     description: [
-      "AquaBoard brings water-based underfloor heating to existing homes without digging up the slab. Pre-routed gypsum panels accept 12 mm PERT-AL-PERT pipe and build up just 18 mm — thin enough to run through a renovation without rehanging every door.",
+      "AquaBoard brings water-based underfloor heating to existing homes without digging up the slab. Pre-routed gypsum panels accept 12 mm PERT-AL-PERT pipe and build up just 18 mm  thin enough to run through a renovation without rehanging every door.",
       "Connected to a heat pump or gas boiler, AquaBoard delivers the lowest running costs of any system we sell, and its high thermal mass keeps rooms at temperature for hours after the heat source cycles off. The system of choice for Himalayan-belt homes that heat all winter.",
     ],
     features: [
-      "Only 18 mm build-up — genuinely retrofittable",
+      "Only 18 mm build-up  genuinely retrofittable",
       "Works with heat pumps at low flow temperatures (35 °C)",
       "Cheapest running cost per m² of any ProWarm system",
       "Pre-routed panels cut installation time by half",
@@ -207,7 +207,7 @@ export const products: Product[] = [
     priceValue: 12900,
     description: [
       "The SenseWarm Pro is the brain of a ProWarm floor. Its dual sensors read both air and floor temperature, protecting delicate wood finishes while holding the room exactly where you want it. The learning schedule notices when you actually use each room and quietly trims run-time you don't need.",
-      "Control everything from the SenseWarm app — per-room schedules, geofenced away mode, and monthly energy reports in rupees, not kilowatt-hours. Works with Alexa and Google Home.",
+      "Control everything from the SenseWarm app  per-room schedules, geofenced away mode, and monthly energy reports in rupees, not kilowatt-hours. Works with Alexa and Google Home.",
     ],
     features: [
       "Dual air + floor sensing protects wooden floors",
@@ -239,7 +239,7 @@ export const products: Product[] = [
     price: "₹6,400",
     priceValue: 6400,
     description: [
-      "Not every room needs a schedule. The SenseWarm Dial is a precision-machined rotary thermostat for guest rooms, pooja rooms and rental properties — turn for temperature, press for boost, done.",
+      "Not every room needs a schedule. The SenseWarm Dial is a precision-machined rotary thermostat for guest rooms, pooja rooms and rental properties  turn for temperature, press for boost, done.",
       "Behind the simple face sits the same dual-sensor control board as the Pro, with floor-temperature limits to protect wood and vinyl finishes.",
     ],
     features: [
@@ -270,14 +270,14 @@ export const products: Product[] = [
     price: "From ₹380 / m²",
     priceValue: 380,
     description: [
-      "Heat goes wherever it's easiest — and on an uninsulated slab, that's straight down into the ground. ThermaBase XPS boards sit between the subfloor and your heating system, reflecting warmth up into the room instead of losing it below.",
+      "Heat goes wherever it's easiest  and on an uninsulated slab, that's straight down into the ground. ThermaBase XPS boards sit between the subfloor and your heating system, reflecting warmth up into the room instead of losing it below.",
       "On a cold concrete slab, 10 mm of ThermaBase typically halves heat-up time and cuts running cost by up to 50%. It's the first line on every quotation we issue, because it's the best money you'll spend on the whole system.",
     ],
     features: [
       "Halves heat-up times on concrete slabs",
       "Cuts running costs by up to 50%",
       "Cement-coated face tiles over directly",
-      "Waterproof — ideal for bathrooms and wet rooms",
+      "Waterproof  ideal for bathrooms and wet rooms",
       "Compression strength 30 t/m²",
     ],
     specs: {
@@ -302,10 +302,10 @@ export const products: Product[] = [
     priceValue: 1850,
     description: [
       "FloorPrime is a fibre-reinforced, flexible self-levelling compound formulated specifically for encapsulating heating cables and mats. It flows to a glass-flat finish at 5–40 mm, cures for foot traffic in 4 hours, and accepts tile, vinyl or laminate the next day.",
-      "Its flexible polymer blend tolerates the thermal cycling of a heated floor without cracking — something standard levellers aren't designed to do.",
+      "Its flexible polymer blend tolerates the thermal cycling of a heated floor without cracking  something standard levellers aren't designed to do.",
     ],
     features: [
-      "Formulated for heated floors — thermally flexible",
+      "Formulated for heated floors  thermally flexible",
       "Walk-on in 4 hours, floor finish in 24",
       "Self-smoothing from 5 mm to 40 mm depth",
       "Protein-free, low-dust formulation",
@@ -332,7 +332,7 @@ export const products: Product[] = [
     price: "From ₹18,500",
     priceValue: 18500,
     description: [
-      "The AquaFlow manifold is the distribution heart of a water-based system — nickel-plated brass with individual flow meters, isolation valves and thermometer gauges for every circuit, so each room gets exactly the flow its heat-loss demands.",
+      "The AquaFlow manifold is the distribution heart of a water-based system  nickel-plated brass with individual flow meters, isolation valves and thermometer gauges for every circuit, so each room gets exactly the flow its heat-loss demands.",
       "Available in 2 to 12 port configurations with optional thermoelectric actuators for room-by-room smart zoning through SenseWarm controls.",
     ],
     features: [

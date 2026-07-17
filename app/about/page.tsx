@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Compass, HeartHandshake, Ruler, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
@@ -30,18 +30,18 @@ const values = [
   {
     Icon: HeartHandshake,
     title: "Answer the phone",
-    text: "Support is our own engineers in Mumbai — the people who designed your system, one call away for its entire warranted life.",
+    text: "Support is our own engineers in Mumbai  the people who designed your system, one call away for its entire warranted life.",
   },
   {
     Icon: Compass,
     title: "Design for this country",
-    text: "Indian tariffs, Indian floor build-ups, Indian winters — from a Delhi bathroom to a Leh homestay. We don't import assumptions.",
+    text: "Indian tariffs, Indian floor build-ups, Indian winters  from a Delhi bathroom to a Leh homestay. We don't import assumptions.",
   },
 ];
 
 const milestones = [
   { year: "2012", text: "Founded in Mumbai after one unforgettably cold Srinagar winter; three installers, one van." },
-  { year: "2015", text: "First whole-home hydronic project in Shimla — still running on its original manifold." },
+  { year: "2015", text: "First whole-home hydronic project in Shimla  still running on its original manifold." },
   { year: "2018", text: "SenseWarm thermostat line launches; the 10-year full-replacement warranty becomes standard." },
   { year: "2021", text: "Crossed 5,000 installations and opened the Manali cold-climate demonstration home." },
   { year: "2024", text: "Heat-pump hydronic packages launch; hotel division warms its 500th guest room." },
@@ -60,7 +60,7 @@ export default function AboutPage() {
             end at the front door.
           </>
         }
-        lead="ProWarm India designs, installs and stands behind underfloor heating that disappears into the architecture — and stays out of your electricity bill."
+        lead="ProWarm India designs, installs and stands behind underfloor heating that disappears into the architecture  and stays out of your electricity bill."
         image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2400&auto=format&fit=crop"
         imageAlt="Warm, softly lit living room with heated wooden flooring"
       />
@@ -89,14 +89,14 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Our story"
             title="It started with cold feet"
-            lead="In January 2011, our founder spent a winter in his grandmother's Srinagar home — a beautiful house of deodar and stone that no bukhari or blower could make comfortable."
+            lead="In January 2011, our founder spent a winter in his grandmother's Srinagar home  a beautiful house of deodar and stone that no bukhari or blower could make comfortable."
           />
           <Reveal delay={0.1}>
             <div className="mt-6 space-y-5 leading-relaxed text-charcoal-600">
               <p>
                 The floors were the problem. Stone that held the night&apos;s cold until
                 noon, in rooms where three generations had always lived close to the
-                ground — eating, praying, sleeping on mattresses laid out each night.
+                ground  eating, praying, sleeping on mattresses laid out each night.
                 Heating the air did nothing for a life lived on the floor.
               </p>
               <p>
@@ -104,12 +104,12 @@ export default function AboutPage() {
                 and Canada, but in India it was an importer&apos;s afterthought: foreign
                 mats sold at foreign prices, with no design, no installation discipline
                 and no one to call in February. Arjun founded ProWarm in 2012 to do it
-                properly — engineering first, for Indian homes, tariffs and winters.
+                properly  engineering first, for Indian homes, tariffs and winters.
               </p>
               <p>
                 A decade on, we&apos;re sixty people: thermal engineers, our own trained
                 installation crews, and a support line the founders still answer on
-                busy mornings. The mission hasn&apos;t moved an inch — warmth you feel,
+                busy mornings. The mission hasn&apos;t moved an inch  warmth you feel,
                 heating you never see.
               </p>
             </div>

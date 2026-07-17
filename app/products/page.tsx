@@ -1,4 +1,4 @@
-import { Check, Droplets, Minus, Zap } from "lucide-react";
+﻿import { Check, Droplets, Minus, Zap } from "lucide-react";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { CtaBanner } from "@/components/cta-banner";
@@ -12,7 +12,7 @@ import { getFeaturedProducts, products } from "@/lib/products";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Electric heating mats, water-based systems, SenseWarm smart thermostats and insulation — the full ProWarm underfloor heating range with Indian pricing.",
+    "Electric heating mats, water-based systems, SenseWarm smart thermostats and insulation  the full ProWarm underfloor heating range with Indian pricing.",
 };
 
 const heroStats = [
@@ -29,7 +29,7 @@ const comparison: {
   hydronic: string;
   winner: Winner;
 }[] = [
-  { label: "Installed cost", electric: "Lower — from ₹1,150/m²", hydronic: "Higher — from ₹1,700/m²", winner: "electric" },
+  { label: "Installed cost", electric: "Lower  from ₹1,150/m²", hydronic: "Higher  from ₹1,700/m²", winner: "electric" },
   { label: "Running cost", electric: "Higher per unit of heat", hydronic: "Lowest, especially via heat pump", winner: "hydronic" },
   { label: "Floor build-up", electric: "1–5 mm", hydronic: "18–75 mm", winner: "electric" },
   { label: "Heat-up time", electric: "15–25 minutes", hydronic: "45–90 minutes", winner: "electric" },
@@ -46,7 +46,7 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="Products"
         title="Every layer of a warm floor"
-        lead="Heating mats and cables, water-based systems, the thermostats that run them and the insulation that makes them cheap to run — engineered to work as one system."
+        lead="Heating mats and cables, water-based systems, the thermostats that run them and the insulation that makes them cheap to run  engineered to work as one system."
         image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2400&auto=format&fit=crop"
         imageAlt="Warm, open-plan living space with seamless heated flooring"
       >
@@ -68,7 +68,7 @@ export default function ProductsPage() {
         <SectionHeading
           eyebrow="The flagships"
           title="The systems we're known for"
-          lead="Three ways we warm the most floors in India — the best-selling mat, the low-profile hydronic retrofit, and the thermostat that runs them both."
+          lead="Three ways we warm the most floors in India  the best-selling mat, the low-profile hydronic retrofit, and the thermostat that runs them both."
         />
         <div className="mt-16 md:mt-20">
           <ProductSpotlight products={featured} />
@@ -91,14 +91,14 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Electric vs hydronic — editorial dual panel */}
+      {/* Electric vs hydronic  editorial dual panel */}
       <section className="bg-charcoal-950 py-24 text-white md:py-32">
         <div className="container-site">
           <SectionHeading
             dark
             eyebrow="Choosing a family"
             title="Electric or water-based?"
-            lead="The honest side-by-side we walk through on every first call — copper marks where each system pulls ahead."
+            lead="The honest side-by-side we walk through on every first call  copper marks where each system pulls ahead."
             align="center"
           />
 
@@ -154,7 +154,7 @@ export default function ProductsPage() {
 
       <CtaBanner
         title="Not sure which system fits?"
-        lead="Send a floor plan and we'll match the system to the rooms — with pricing and running costs for your city."
+        lead="Send a floor plan and we'll match the system to the rooms  with pricing and running costs for your city."
       />
     </>
   );

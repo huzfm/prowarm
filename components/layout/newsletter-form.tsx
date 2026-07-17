@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
@@ -22,7 +22,7 @@ export function NewsletterForm({ id = "newsletter" }: { id?: string }) {
     }
     setError(null);
     setPending(true);
-    // Simulated subscribe — wire to your ESP endpoint later.
+    // Simulated subscribe  wire to your ESP endpoint later.
     await new Promise((r) => setTimeout(r, 800));
     setPending(false);
     setEmail("");

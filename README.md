@@ -1,4 +1,4 @@
-# ProWarm India — prowarm.in
+﻿# ProWarm India  prowarm.in
 
 Premium marketing site for ProWarm India (underfloor heating solutions). Built with Next.js 16 (App Router, TypeScript, Turbopack), Tailwind CSS v4, Framer Motion + GSAP ScrollTrigger, Lenis smooth scrolling, and MDX for the blog.
 
@@ -17,7 +17,7 @@ Node 20.9+ required (Next.js 16 minimum).
 
 ```
 app/                    Routes (App Router)
-  page.tsx              Home — hero, stats, pinned benefits, products, testimonials, blog, CTA
+  page.tsx              Home  hero, stats, pinned benefits, products, testimonials, blog, CTA
   about/ services/ contact/
   products/             Filterable grid (+ [slug] detail pages, statically generated)
   blog/                 Search/filter/pagination (+ [slug] article pages from MDX)
@@ -40,20 +40,20 @@ lib/
 
 ## Swapping in real content
 
-- **Copy & contact details** — edit `lib/site.ts` (one file: address, phone, socials, stats, testimonials, partner names).
-- **Products** — edit `lib/products.ts`. Each product is a typed object (name, price, specs, features, images). Detail pages are generated automatically from the array.
-- **Blog posts** — drop a `.mdx` file into `content/blog/`. Frontmatter needs `title`, `excerpt`, `date`, `category`, `tags`, `image`, `imageAlt`, `author{name, role}`. Reading time, TOC, related posts, sitemap entries and static generation all happen automatically.
-- **Images** — currently Unsplash URLs. Replace `src` values in `lib/products.ts`, the blog frontmatter, and the hero/section components (`components/home/hero.tsx`, `components/home/benefits-pinned.tsx`, `components/about/team.tsx`, `app/about/page.tsx`). For local files, put them in `public/` and remove the `remotePatterns` entry in `next.config.ts` if unused. A hero **video** can replace the `<Image>` in `components/home/hero.tsx` with a muted, autoplaying `<video>` — the parallax wrapper works unchanged.
-- **Forms** — the contact form and newsletter simulate a send (see `components/contact/contact-form.tsx`, `components/layout/newsletter-form.tsx`). Point the marked `// Simulated…` blocks at a route handler, server action, or service like Resend/Formspree.
-- **Domain** — `lib/site.ts` `url` drives `metadataBase`, the sitemap and share links.
+- **Copy & contact details**  edit `lib/site.ts` (one file: address, phone, socials, stats, testimonials, partner names).
+- **Products**  edit `lib/products.ts`. Each product is a typed object (name, price, specs, features, images). Detail pages are generated automatically from the array.
+- **Blog posts**  drop a `.mdx` file into `content/blog/`. Frontmatter needs `title`, `excerpt`, `date`, `category`, `tags`, `image`, `imageAlt`, `author{name, role}`. Reading time, TOC, related posts, sitemap entries and static generation all happen automatically.
+- **Images**  currently Unsplash URLs. Replace `src` values in `lib/products.ts`, the blog frontmatter, and the hero/section components (`components/home/hero.tsx`, `components/home/benefits-pinned.tsx`, `components/about/team.tsx`, `app/about/page.tsx`). For local files, put them in `public/` and remove the `remotePatterns` entry in `next.config.ts` if unused. A hero **video** can replace the `<Image>` in `components/home/hero.tsx` with a muted, autoplaying `<video>`  the parallax wrapper works unchanged.
+- **Forms**  the contact form and newsletter simulate a send (see `components/contact/contact-form.tsx`, `components/layout/newsletter-form.tsx`). Point the marked `// Simulated…` blocks at a route handler, server action, or service like Resend/Formspree.
+- **Domain**  `lib/site.ts` `url` drives `metadataBase`, the sitemap and share links.
 
 ## Design system
 
-All tokens live in `app/globals.css` under `@theme` (Tailwind v4's CSS-first config — the v4 replacement for `tailwind.config.ts`):
+All tokens live in `app/globals.css` under `@theme` (Tailwind v4's CSS-first config  the v4 replacement for `tailwind.config.ts`):
 
-- **Colors** — `copper-*` (accent, #C8763A base), `charcoal-*` (deep warm gray, #1A1A1A), `cream-*` (warm off-white, #FAF7F2). Default Tailwind palette is wiped, so nothing off-brand can creep in.
-- **Type** — Fraunces (display serif) + Inter (body) via `next/font`, with `text-display-1/2/3`, `text-eyebrow`, `text-lead` utilities.
-- **Radii / shadows / easing** — `rounded-card`, `rounded-field`, `shadow-card`, `shadow-card-hover`, `ease-(--ease-out-quart)`.
+- **Colors**  `copper-*` (accent, #C8763A base), `charcoal-*` (deep warm gray, #1A1A1A), `cream-*` (warm off-white, #FAF7F2). Default Tailwind palette is wiped, so nothing off-brand can creep in.
+- **Type**  Fraunces (display serif) + Inter (body) via `next/font`, with `text-display-1/2/3`, `text-eyebrow`, `text-lead` utilities.
+- **Radii / shadows / easing**  `rounded-card`, `rounded-field`, `shadow-card`, `shadow-card-hover`, `ease-(--ease-out-quart)`.
 
 ## Motion notes
 
@@ -63,4 +63,4 @@ All tokens live in `app/globals.css` under `@theme` (Tailwind v4's CSS-first con
 
 ## Deployment
 
-Ready for Vercel — no env vars needed. Every route is statically generated at build time.
+Ready for Vercel  no env vars needed. Every route is statically generated at build time.

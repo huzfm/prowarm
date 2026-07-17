@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import { PostCard } from "@/components/blog/post-card";
@@ -17,9 +17,9 @@ import { getFeaturedProducts } from "@/lib/products";
 import { partners } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "ProWarm India — Underfloor Heating Solutions",
+  title: "ProWarm India  Underfloor Heating Solutions",
   description:
-    "Electric and water-based underfloor heating for Indian homes — designed, installed and guaranteed for 10 years. Warm floors, 40% lower running costs.",
+    "Electric and water-based underfloor heating for Indian homes  designed, installed and guaranteed for 10 years. Warm floors, 40% lower running costs.",
 };
 
 export default function HomePage() {

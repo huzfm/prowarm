@@ -197,7 +197,7 @@ export default async function ProductDetailPage({
 
       <CtaBanner
         title={`Put ${product.name.split(" ").slice(0, 2).join(" ")} under your floor`}
-        lead="Tell us the rooms and the floor finish — we'll confirm compatibility, size the system and price it end to end."
+        lead="Tell us the rooms and the floor finish we'll confirm compatibility, size the system and price it end to end."
       />
     </>
   );

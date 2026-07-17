@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { Mail } from "lucide-react";
@@ -44,7 +44,7 @@ export function Team() {
         <SectionHeading
           eyebrow="The people"
           title="Engineers first, salespeople never"
-          lead="The team that designs, installs and answers the phone — hover a card to meet them."
+          lead="The team that designs, installs and answers the phone  hover a card to meet them."
         />
         <RevealGroup className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member) => (

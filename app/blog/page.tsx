@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { BlogExplorer } from "@/components/blog/blog-explorer";
 import { CtaBanner } from "@/components/cta-banner";
 import { PageHero } from "@/components/page-hero";
@@ -7,7 +7,7 @@ import { getAllPosts, getBlogCategories } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Honest costs, design guides and engineering notes on underfloor heating in India — from the ProWarm team.",
+    "Honest costs, design guides and engineering notes on underfloor heating in India  from the ProWarm team.",
 };
 
 export default function BlogPage() {
@@ -19,7 +19,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="The journal"
         title="Warm-floor know-how"
-        lead="What underfloor heating really costs, how it's designed, and what a decade of Indian installations has taught us. No jargon, no fluff — numbers included."
+        lead="What underfloor heating really costs, how it's designed, and what a decade of Indian installations has taught us. No jargon, no fluff  numbers included."
         image="https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=2400&auto=format&fit=crop"
         imageAlt="Warm, editorial living room with engineered wood flooring"
       />

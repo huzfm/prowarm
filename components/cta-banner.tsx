@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Magnetic } from "@/components/motion/magnetic";
 import { Reveal } from "@/components/motion/reveal";
@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function CtaBanner({
   title = "Ready for your last cold winter?",
-  lead = "Send us a floor plan or book a free site survey — we'll design your system, price it room by room, and show you the running costs before you commit to anything.",
+  lead = "Send us a floor plan or book a free site survey  we'll design your system, price it room by room, and show you the running costs before you commit to anything.",
 }: {
   title?: string;
   lead?: string;

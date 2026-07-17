@@ -1,9 +1,9 @@
-export const siteConfig = {
+﻿export const siteConfig = {
   name: "ProWarm India",
   url: "https://prowarm.in",
   tagline: "Underfloor heating, engineered for Indian homes.",
   description:
-    "ProWarm India designs and installs electric and water-based underfloor heating systems, smart thermostats and insulation — invisible warmth for tile, stone, laminate and wood floors across India.",
+    "ProWarm India designs and installs electric and water-based underfloor heating systems, smart thermostats and insulation  invisible warmth for tile, stone, laminate and wood floors across India.",
   email: "hello@prowarm.in",
   phone: "+91 98110 40040",
   address: "Unit 12, Sun Mill Compound, Lower Parel, Mumbai 400013",
@@ -46,7 +46,7 @@ export const partners = [
 export const testimonials = [
   {
     quote:
-      "We tiled the entire ground floor in Kota stone, which turns ice-cold in a Delhi winter. ProWarm's electric mats went in under the tile in two days, and now it's the warmest room in the house. The running cost genuinely surprised us — about the price of a ceiling fan per room.",
+      "We tiled the entire ground floor in Kota stone, which turns ice-cold in a Delhi winter. ProWarm's electric mats went in under the tile in two days, and now it's the warmest room in the house. The running cost genuinely surprised us  about the price of a ceiling fan per room.",
     name: "Meera Chandran",
     role: "Homeowner, New Delhi",
   },
@@ -58,7 +58,7 @@ export const testimonials = [
   },
   {
     quote:
-      "Our boutique hotel in Manali runs ProWarm hydronic floors across 22 rooms. Guests notice the warmth the moment they walk in barefoot — no radiators, no noise, no dry air. Two winters in, zero callouts.",
+      "Our boutique hotel in Manali runs ProWarm hydronic floors across 22 rooms. Guests notice the warmth the moment they walk in barefoot  no radiators, no noise, no dry air. Two winters in, zero callouts.",
     name: "Anjali Thakur",
     role: "Owner, Cedar House Manali",
   },
@@ -70,7 +70,7 @@ export const testimonials = [
   },
   {
     quote:
-      "We retrofitted heating under engineered oak in a 40-year-old Srinagar home. ProWarm's low-profile boards added barely 18 mm of height. The whole family lives on the floor again in winter — the way it should be.",
+      "We retrofitted heating under engineered oak in a 40-year-old Srinagar home. ProWarm's low-profile boards added barely 18 mm of height. The whole family lives on the floor again in winter  the way it should be.",
     name: "Farah Wani",
     role: "Homeowner, Srinagar",
   },

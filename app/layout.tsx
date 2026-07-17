@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
@@ -23,7 +23,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Underfloor Heating Solutions`,
+    default: `${siteConfig.name}  Underfloor Heating Solutions`,
     template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Underfloor Heating Solutions`,
+    title: `${siteConfig.name}  Underfloor Heating Solutions`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Underfloor Heating Solutions`,
+    title: `${siteConfig.name}  Underfloor Heating Solutions`,
     description: siteConfig.description,
   },
 };

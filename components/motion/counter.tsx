@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 
 import { animate, useInView, useReducedMotion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 function format(value: number) {
-  // en-IN grouping: 3,20,000 — right for an Indian audience.
+  // en-IN grouping: 3,20,000  right for an Indian audience.
   return Math.round(value).toLocaleString("en-IN");
 }
 

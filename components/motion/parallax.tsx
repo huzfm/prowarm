@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
 import { gsap } from "@/lib/gsap";
@@ -6,7 +6,7 @@ import { gsap } from "@/lib/gsap";
 /**
  * Scroll-linked parallax. Wrap an oversized child (e.g. an image scaled
  * ~110%) inside an overflow-hidden parent and it drifts slower than the page.
- * `fromTop` — for heroes that start at the very top of the viewport.
+ * `fromTop`  for heroes that start at the very top of the viewport.
  */
 export function Parallax({
   children,

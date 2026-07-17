@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import {
   ArrowRight,
   ClipboardCheck,
@@ -35,7 +35,7 @@ const services = [
     title: "Survey & heat-loss assessment",
     summary: "Free, measured, and the foundation of every honest quote.",
     detail:
-      "An engineer visits your site (or works from architect's drawings) and measures what your rooms actually lose: floor build-up, glazing, orientation, insulation. The output is a per-room wattage requirement — the number every other decision hangs on. If underfloor heating isn't right for a space, this is where we say so.",
+      "An engineer visits your site (or works from architect's drawings) and measures what your rooms actually lose: floor build-up, glazing, orientation, insulation. The output is a per-room wattage requirement  the number every other decision hangs on. If underfloor heating isn't right for a space, this is where we say so.",
   },
   {
     id: "electric",
@@ -51,7 +51,7 @@ const services = [
     title: "Hydronic system design & installation",
     summary: "Whole-home water-based heating for new builds and retrofits.",
     detail:
-      "Screeded systems for new construction, 18 mm low-profile boards for renovations — designed circuit by circuit, pressure-tested before any pour, and balanced at the manifold. We size and commission the heat source too, with heat-pump packages that run radiant floors at their efficiency sweet spot.",
+      "Screeded systems for new construction, 18 mm low-profile boards for renovations  designed circuit by circuit, pressure-tested before any pour, and balanced at the manifold. We size and commission the heat source too, with heat-pump packages that run radiant floors at their efficiency sweet spot.",
   },
   {
     id: "controls",
@@ -67,7 +67,7 @@ const services = [
     title: "Insulation & subfloor preparation",
     summary: "The unglamorous layer that halves your running cost.",
     detail:
-      "Priming, levelling and ThermaBase insulation boards — specified for your exact subfloor. On cold concrete slabs this layer typically halves heat-up time and cuts running costs by up to 50%, which is why it appears on every quotation we issue.",
+      "Priming, levelling and ThermaBase insulation boards  specified for your exact subfloor. On cold concrete slabs this layer typically halves heat-up time and cuts running costs by up to 50%, which is why it appears on every quotation we issue.",
   },
   {
     id: "aftercare",
@@ -75,7 +75,7 @@ const services = [
     title: "Warranty & after-sales support",
     summary: "10–25 year warranties, honoured by the people who installed it.",
     detail:
-      "Your handover pack includes logged test results, photographs of every cable and pipe run, and registered warranty documents. Support is our own Mumbai engineering team — the same people who designed the system — plus annual health checks for hydronic installations.",
+      "Your handover pack includes logged test results, photographs of every cable and pipe run, and registered warranty documents. Support is our own Mumbai engineering team  the same people who designed the system  plus annual health checks for hydronic installations.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default function ServicesPage() {
             answered for.
           </>
         }
-        lead="We don't sell boxes of heating mat. We deliver warm floors — surveyed, engineered, installed by our own crews and supported for decades."
+        lead="We don't sell boxes of heating mat. We deliver warm floors  surveyed, engineered, installed by our own crews and supported for decades."
         image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2400&auto=format&fit=crop"
         imageAlt="Installer carefully laying an underfloor heating system on a prepared floor"
       >
@@ -108,7 +108,7 @@ export default function ServicesPage() {
         <SectionHeading
           eyebrow="What we do"
           title="Six services, one warm outcome"
-          lead="Expand any service for the detail — or skip straight to booking a survey and we'll walk you through it in person."
+          lead="Expand any service for the detail  or skip straight to booking a survey and we'll walk you through it in person."
         />
         <RevealGroup className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map(({ id, Icon, title, summary }) => (

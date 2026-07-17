@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -53,7 +53,7 @@ export function Hero() {
           className="mt-6 max-w-xl text-lead text-white/75"
         >
           Electric and water-based underfloor heating, designed and installed
-          end-to-end — silent, invisible, and up to 40% cheaper to run than
+          end-to-end  silent, invisible, and up to 40% cheaper to run than
           blown-air heating.
         </motion.p>
 

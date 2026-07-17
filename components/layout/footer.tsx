@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Flame, Mail, MapPin, Phone } from "lucide-react";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from "@/components/icons";
 import { NewsletterForm } from "@/components/layout/newsletter-form";
@@ -31,7 +31,7 @@ export function Footer() {
     <footer className="bg-charcoal-950 text-white">
       <div className="container-site grid gap-12 py-16 md:py-20 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-4">
-          <Link href="/" className="flex items-center gap-2" aria-label={`${siteConfig.name} — home`}>
+          <Link href="/" className="flex items-center gap-2" aria-label={`${siteConfig.name}  home`}>
             <span className="grid size-9 place-items-center rounded-full bg-copper-500">
               <Flame className="size-4.5" aria-hidden />
             </span>
@@ -40,7 +40,7 @@ export function Footer() {
             </span>
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
-            Invisible warmth for Indian homes — electric and water-based underfloor
+            Invisible warmth for Indian homes  electric and water-based underfloor
             heating, designed, installed and supported end to end.
           </p>
           <ul className="mt-6 space-y-3 text-sm text-white/70">
@@ -92,7 +92,7 @@ export function Footer() {
         <div className="lg:col-span-3">
           <h2 className="text-eyebrow text-white/40">Stay warm, stay posted</h2>
           <p className="mt-5 text-sm text-white/60">
-            One email a month — seasonal offers, running-cost tips and project stories.
+            One email a month  seasonal offers, running-cost tips and project stories.
           </p>
           <div className="mt-4">
             <NewsletterForm id="footer-newsletter" />

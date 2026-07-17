@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -20,7 +20,7 @@ const benefits: Benefit[] = [
     Icon: Waves,
     title: "Even warmth, wall to wall",
     description:
-      "A radiant floor heats the whole room from below — no hot corner by the blower and cold draught by the window. Just one gentle, even temperature from skirting to skirting, and warm stone under bare feet in January.",
+      "A radiant floor heats the whole room from below  no hot corner by the blower and cold draught by the window. Just one gentle, even temperature from skirting to skirting, and warm stone under bare feet in January.",
     image:
       "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1400&auto=format&fit=crop",
     alt: "Sunlit bathroom with evenly heated stone tiles",
@@ -38,7 +38,7 @@ const benefits: Benefit[] = [
     Icon: ShieldCheck,
     title: "Installed once, guaranteed for a decade",
     description:
-      "Every circuit is resistance-tested three times before it disappears under your floor, photographed for your records, and backed by a 10-year full-replacement warranty — with our own engineers on the phone, not a call centre.",
+      "Every circuit is resistance-tested three times before it disappears under your floor, photographed for your records, and backed by a 10-year full-replacement warranty  with our own engineers on the phone, not a call centre.",
     image:
       "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1400&auto=format&fit=crop",
     alt: "ProWarm engineer testing a floor heating circuit during installation",
@@ -46,7 +46,7 @@ const benefits: Benefit[] = [
 ];
 
 /**
- * "Why us" section — pins in place on desktop while the three benefit
+ * "Why us" section  pins in place on desktop while the three benefit
  * panels crossfade as the user scrolls (GSAP ScrollTrigger pin).
  * On mobile / reduced motion it renders as a simple stacked list.
  */
@@ -144,7 +144,7 @@ export function BenefitsPinned() {
           ))}
         </div>
 
-        {/* Progress dots — desktop pin only */}
+        {/* Progress dots  desktop pin only */}
         <div className="mt-10 hidden gap-2 lg:flex" aria-hidden>
           {benefits.map((b, i) => (
             <span

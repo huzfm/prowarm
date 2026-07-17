@@ -1,6 +1,6 @@
-import type { SVGProps } from "react";
+﻿import type { SVGProps } from "react";
 
-/* Brand icons — lucide-react no longer ships brand glyphs. */
+/* Brand icons  lucide-react no longer ships brand glyphs. */
 
 export function InstagramIcon(props: SVGProps<SVGSVGElement>) {
   return (
