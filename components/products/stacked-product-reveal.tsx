@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
 export interface StackedProduct {
   slug: string;
@@ -51,15 +52,12 @@ export function StackedProductReveal({
 }) {
   const sectionRef = useRef<HTMLElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [reduced, setReduced] = useState(false);
+  const reduced = usePrefersReducedMotion();
 
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
+  // Identity of the current deck. Filtering or sorting changes this, which
+  // rebuilds the timeline in place — no remount, so the pinned section is
+  // never torn out from under ScrollTrigger.
+  const deckKey = products.map((p) => p.slug).join("|");
 
   useEffect(() => {
     if (reduced) return;
@@ -197,7 +195,12 @@ export function StackedProductReveal({
     // settles, otherwise the trigger keeps stale bounds and never scrubs.
     const images = Array.from(section.querySelectorAll("img"));
     const pending = images.filter((img) => !img.complete);
-    const onSettled = () => ScrollTrigger.refresh();
+    // Guarded: a late image load must not refresh triggers after this effect
+    // has torn down, which would rebuild pin spacers React no longer expects.
+    let cancelled = false;
+    const onSettled = () => {
+      if (!cancelled) ScrollTrigger.refresh();
+    };
     pending.forEach((img) => {
       img.addEventListener("load", onSettled, { once: true });
       img.addEventListener("error", onSettled, { once: true });
@@ -205,13 +208,14 @@ export function StackedProductReveal({
     if (pending.length === 0) ScrollTrigger.refresh();
 
     return () => {
+      cancelled = true;
       pending.forEach((img) => {
         img.removeEventListener("load", onSettled);
         img.removeEventListener("error", onSettled);
       });
       ctx.revert();
     };
-  }, [reduced, products.length]);
+  }, [reduced, deckKey]);
 
   // ---- Reduced motion: plain vertical stack, no pin, no clip-path ----
   if (reduced) {
@@ -219,7 +223,7 @@ export function StackedProductReveal({
       <section className={className}>
         <div className="container-site space-y-8">
           {products.map((product) => (
-            <ProductCard key={product.slug} product={product} static />
+            <DeckCard key={product.slug} product={product} static />
           ))}
         </div>
       </section>
@@ -227,30 +231,35 @@ export function StackedProductReveal({
   }
 
   return (
-    <section ref={sectionRef} className={className}>
+    // The outer wrapper is React's. ScrollTrigger's pin reparents the <section>
+    // into a pin-spacer, so React must never be the one removing that node —
+    // on unmount it removes this div, whose own parent GSAP never touches.
+    <div className={className}>
+      <section ref={sectionRef} className="relative">
       {/*
         The stage is the full pinned viewport, and every card fills it. Cards
         rest at CARD_IN_SCALE so they read as inset, then zoom to exactly 1 —
         full width and height — before peeling away.
       */}
-      <div className="relative left-1/2 h-svh w-screen -translate-x-1/2 overflow-hidden">
-        {products.map((product, i) => (
-          <div
-            key={product.slug}
-            ref={(el) => {
-              cardRefs.current[i] = el;
-            }}
-            className="absolute inset-0 will-change-transform"
-          >
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
-    </section>
+        <div className="relative left-1/2 h-svh w-screen -translate-x-1/2 overflow-hidden">
+          {products.map((product, i) => (
+            <div
+              key={product.slug}
+              ref={(el) => {
+                cardRefs.current[i] = el;
+              }}
+              className="absolute inset-0 will-change-transform"
+            >
+              <DeckCard product={product} />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
 
-function ProductCard({
+export function DeckCard({
   product,
   static: isStatic = false,
 }: {

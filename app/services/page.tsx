@@ -10,9 +10,10 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { CtaBanner } from "@/components/cta-banner";
-import { RevealGroup, RevealItem, Reveal } from "@/components/motion/reveal";
+import { Reveal } from "@/components/motion/reveal";
 import { PageHero } from "@/components/page-hero";
 import { Process } from "@/components/services/process";
+import { ServiceScroller } from "@/components/services/service-scroller";
 import { SectionHeading } from "@/components/section-heading";
 import {
   Accordion,
@@ -110,26 +111,19 @@ export default function ServicesPage() {
           title="Six services, one warm outcome"
           lead="Expand any service for the detail  or skip straight to booking a survey and we'll walk you through it in person."
         />
-        <RevealGroup className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ id, Icon, title, summary }) => (
-            <RevealItem key={id} className="h-full">
-              <a
-                href={`#${id}`}
-                className="group flex h-full flex-col rounded-card bg-white p-7 shadow-card transition-[transform,box-shadow] duration-500 ease-(--ease-out-quart) hover:-translate-y-1.5 hover:shadow-card-hover motion-reduce:hover:translate-y-0"
-              >
-                <span className="grid size-12 place-items-center rounded-xl bg-copper-100 text-copper-600 transition-colors group-hover:bg-copper-500 group-hover:text-white">
-                  <Icon className="size-6" aria-hidden />
-                </span>
-                <h3 className="mt-5 font-display text-xl text-charcoal-900">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-charcoal-500">{summary}</p>
-                <span className="mt-auto flex items-center gap-1.5 pt-5 text-sm font-medium text-copper-600">
-                  Read more
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden />
-                </span>
-              </a>
-            </RevealItem>
-          ))}
-        </RevealGroup>
+        {/*
+          The icon is rendered here rather than passed as a component: only
+          plain data and elements cross the Server → Client boundary.
+        */}
+        <ServiceScroller
+          services={services.map(({ id, Icon, title, summary }) => ({
+            id,
+            title,
+            summary,
+            icon: <Icon className="size-7" aria-hidden />,
+          }))}
+          className="mt-14"
+        />
       </section>
 
       {/* Detail accordion */}

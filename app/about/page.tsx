@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { ArrowRight, Compass, HeartHandshake, Ruler, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
+import { JourneyTrack } from "@/components/about/journey-track";
 import { Team } from "@/components/about/team";
 import { CtaBanner } from "@/components/cta-banner";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
@@ -150,37 +151,7 @@ export default function AboutPage() {
           title="Fourteen years, one warm line"
           align="center"
         />
-        <div className="relative mx-auto mt-16 max-w-2xl">
-          <div
-            aria-hidden
-            className="absolute top-0 bottom-0 left-4 w-px bg-charcoal-900/10 md:left-1/2"
-          />
-          <ol className="space-y-12">
-            {milestones.map((m, i) => (
-              <li key={m.year}>
-                <Reveal
-                  delay={0.05}
-                  className={`relative flex gap-8 pl-12 md:w-1/2 md:pl-0 ${
-                    i % 2 === 0
-                      ? "md:pr-12 md:text-right"
-                      : "md:ml-auto md:pl-12"
-                  }`}
-                >
-                  <span
-                    aria-hidden
-                    className={`absolute top-1.5 left-2.5 size-3 rounded-full border-2 border-copper-500 bg-cream-100 md:left-auto ${
-                      i % 2 === 0 ? "md:-right-1.5" : "md:-left-1.5"
-                    }`}
-                  />
-                  <div>
-                    <p className="font-display text-2xl text-copper-600">{m.year}</p>
-                    <p className="mt-2 leading-relaxed text-charcoal-600">{m.text}</p>
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <JourneyTrack milestones={milestones} className="mt-16" />
         <Reveal className="mt-16 text-center">
           <Button asChild size="lg">
             <Link href="/services">

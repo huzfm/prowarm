@@ -9,10 +9,11 @@ import { Stats } from "@/components/home/stats";
 import { Testimonials } from "@/components/home/testimonials";
 import { Marquee } from "@/components/motion/marquee";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
-import { ProductCard } from "@/components/product-card";
+import { Product360Reveal } from "@/components/products/product-360-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { getAllPosts } from "@/lib/blog";
+import { toStackedProduct } from "@/lib/product-deck";
 import { getFeaturedProducts } from "@/lib/products";
 import { partners } from "@/lib/site";
 
@@ -70,14 +71,12 @@ export default function HomePage() {
               </Button>
             </Reveal>
           </div>
-          <RevealGroup className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((product) => (
-              <RevealItem key={product.slug} className="h-full">
-                <ProductCard product={product} />
-              </RevealItem>
-            ))}
-          </RevealGroup>
         </div>
+        {/* Each featured product zooms in, turns a full 360°, then hands over. */}
+        <Product360Reveal
+          products={featured.map(toStackedProduct)}
+          className="mt-14"
+        />
       </section>
 
       <Testimonials />

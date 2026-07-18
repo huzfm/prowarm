@@ -94,13 +94,13 @@ export function ProductExplorer({ products }: { products: Product[] }) {
       </p>
 
       {/*
-        The filtered range as a scroll-driven curtain deck. Keying on the
-        active set tears down and rebuilds the ScrollTrigger timeline whenever
-        filtering or sorting changes which cards are in the stack.
+        The filtered range as a scroll-driven curtain deck. It rebuilds its own
+        timeline when the visible set changes — deliberately not keyed, since
+        remounting a pinned section mid-animation detaches the pin-spacer that
+        ScrollTrigger wrapped around it and breaks React's DOM removal.
       */}
       {visible.length > 0 && (
         <StackedProductReveal
-          key={visible.map((p) => p.slug).join("|")}
           products={visible.map(toStackedProduct)}
           className="relative mt-6"
         />
