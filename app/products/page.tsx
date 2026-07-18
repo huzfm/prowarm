@@ -5,9 +5,10 @@ import { CtaBanner } from "@/components/cta-banner";
 import { Reveal } from "@/components/motion/reveal";
 import { PageHero } from "@/components/page-hero";
 import { ProductExplorer } from "@/components/products/product-explorer";
-import { ProductSpotlight } from "@/components/products/product-spotlight";
+import { StackedProductReveal } from "@/components/products/stacked-product-reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { getFeaturedProducts, products } from "@/lib/products";
+import { getStackedDeck } from "@/lib/product-deck";
+import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -39,8 +40,6 @@ const comparison: {
 ];
 
 export default function ProductsPage() {
-  const featured = getFeaturedProducts().slice(0, 3);
-
   return (
     <>
       <PageHero
@@ -63,17 +62,18 @@ export default function ProductsPage() {
         </dl>
       </PageHero>
 
-      {/* Flagship spotlight */}
-      <section className="container-site py-24 md:py-32">
-        <SectionHeading
-          eyebrow="The flagships"
-          title="The systems we're known for"
-          lead="Three ways we warm the most floors in India  the best-selling mat, the low-profile hydronic retrofit, and the thermostat that runs them both."
-        />
-        <div className="mt-16 md:mt-20">
-          <ProductSpotlight products={featured} />
-        </div>
-      </section>
+      {/* Flagship spotlight — scroll-driven stacked deck */}
+      <div className="bg-charcoal-950">
+        <section className="container-site pt-24 md:pt-32">
+          <SectionHeading
+            eyebrow="The flagships"
+            title="The systems we're known for"
+            lead="Three ways we warm the most floors in India  the best-selling mat, the low-profile hydronic retrofit, and the thermostat that runs them both."
+            dark
+          />
+        </section>
+        <StackedProductReveal products={getStackedDeck()} className="relative" />
+      </div>
 
       {/* Full range */}
       <section className="bg-cream-200 py-24 md:py-32">

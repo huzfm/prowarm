@@ -1,10 +1,10 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { SearchX } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
-import { ProductCard } from "@/components/product-card";
+import { StackedProductReveal } from "@/components/products/stacked-product-reveal";
+import { toStackedProduct } from "@/lib/product-deck";
 import { categories, type Product, type ProductCategory } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
@@ -93,23 +93,18 @@ export function ProductExplorer({ products }: { products: Product[] }) {
         {products.length} products
       </p>
 
-      <motion.ul layout className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <AnimatePresence mode="popLayout">
-          {visible.map((product) => (
-            <motion.li
-              layout
-              key={product.slug}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="h-full"
-            >
-              <ProductCard product={product} />
-            </motion.li>
-          ))}
-        </AnimatePresence>
-      </motion.ul>
+      {/*
+        The filtered range as a scroll-driven curtain deck. Keying on the
+        active set tears down and rebuilds the ScrollTrigger timeline whenever
+        filtering or sorting changes which cards are in the stack.
+      */}
+      {visible.length > 0 && (
+        <StackedProductReveal
+          key={visible.map((p) => p.slug).join("|")}
+          products={visible.map(toStackedProduct)}
+          className="relative mt-6"
+        />
+      )}
 
       {visible.length === 0 && (
         <div className="mt-16 flex flex-col items-center text-center">
