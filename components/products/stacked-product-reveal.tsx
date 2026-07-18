@@ -17,8 +17,18 @@ export interface StackedProduct {
   image: { src: string; alt: string };
 }
 
-/** Each card gets this much scroll distance (as a multiple of viewport height). */
-const SCROLL_PER_CARD = 0.9;
+/**
+ * Each card gets this much scroll distance (as a multiple of viewport height).
+ * Higher = the card's phases are spread over more scrolling, so the animation
+ * reads slower for the same flick of the wheel.
+ */
+const SCROLL_PER_CARD = 1.5;
+/**
+ * Seconds the animation takes to catch up to the scrollbar. `true` would snap
+ * to the scroll position exactly and feel twitchy; a number eases the playhead
+ * toward it, which is what makes the motion feel smooth.
+ */
+const SCRUB_SMOOTHING = 1.2;
 /** How much smaller each card sits behind the one in front of it. */
 const SCALE_STEP = 0.045;
 /** Vertical peek of each card's edge from behind the one in front, in px. */
@@ -101,7 +111,7 @@ export function StackedProductReveal({
           end: () =>
             `+=${window.innerHeight * SCROLL_PER_CARD * SEGMENT * (cards.length - 1)}`,
           pin: true,
-          scrub: true,
+          scrub: SCRUB_SMOOTHING,
           anticipatePin: 1,
           invalidateOnRefresh: true,
         },
