@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
+import { Environment, Html, Lightformer } from "@react-three/drei";
 import type { Milestone } from "./spiral-timeline";
 
 export interface SpiralSceneProps {
@@ -23,6 +23,7 @@ const LIFT = 0.55;
 
 const GOLD = "#e8b64c";
 const MIDNIGHT = "#2e3350";
+const STEEL = "#3a4160";
 const PEARL = "#eef1f8";
 const CREAM = "#faf7f2";
 
@@ -127,11 +128,28 @@ function Spiral({ milestones, progressRef, registerInvalidate }: SpiralSceneProp
 
   return (
     <group ref={groupRef} scale={scale}>
-      {/* Central pole. */}
-      <mesh position={[0, totalRise / 2, 0]}>
-        <cylinderGeometry args={[0.07, 0.07, totalRise + 2.6, 14]} />
-        <meshStandardMaterial color={MIDNIGHT} metalness={0.7} roughness={0.3} />
-      </mesh>
+      {/* Central pole: tapered brushed-steel shaft, gold collar under each
+          step, a weighted foot below and a gold finial above. */}
+      <group>
+        <mesh position={[0, totalRise / 2, 0]}>
+          <cylinderGeometry args={[0.05, 0.08, totalRise + 2.6, 28]} />
+          <meshStandardMaterial color={STEEL} metalness={0.92} roughness={0.22} />
+        </mesh>
+        {steps.map((step) => (
+          <mesh key={step.angle} position={[0, step.node.y - 0.09, 0]}>
+            <cylinderGeometry args={[0.092, 0.092, 0.05, 24]} />
+            <meshStandardMaterial color={GOLD} metalness={0.85} roughness={0.25} />
+          </mesh>
+        ))}
+        <mesh position={[0, -1.26, 0]}>
+          <cylinderGeometry args={[0.1, 0.16, 0.1, 28]} />
+          <meshStandardMaterial color={STEEL} metalness={0.9} roughness={0.3} />
+        </mesh>
+        <mesh position={[0, totalRise + 1.32, 0]}>
+          <sphereGeometry args={[0.075, 24, 24]} />
+          <meshStandardMaterial color={GOLD} metalness={0.85} roughness={0.2} />
+        </mesh>
+      </group>
 
       {/* Rail: a thin tube swept along the helix. */}
       <mesh>
@@ -217,6 +235,31 @@ export default function SpiralScene(props: SpiralSceneProps) {
       <ambientLight intensity={0.85} />
       <directionalLight position={[4, 7, 5]} intensity={1.35} />
       <directionalLight position={[-5, 2, -2]} intensity={0.4} />
+
+      {/* Local studio reflections (rendered once, no network fetch) — without
+          an environment the metallic pole and rail read as flat plastic. */}
+      <Environment resolution={64} frames={1}>
+        <Lightformer
+          intensity={2.2}
+          position={[0, 4, 6]}
+          scale={[9, 4, 1]}
+          color="#fff4e2"
+        />
+        <Lightformer
+          intensity={1.1}
+          position={[-6, 2, -2]}
+          rotation-y={Math.PI / 2}
+          scale={[6, 3, 1]}
+          color="#dde6ff"
+        />
+        <Lightformer
+          intensity={0.9}
+          position={[6, 1, 2]}
+          rotation-y={-Math.PI / 2}
+          scale={[5, 2, 1]}
+          color="#ffe3b4"
+        />
+      </Environment>
       <Spiral {...props} />
     </Canvas>
   );
