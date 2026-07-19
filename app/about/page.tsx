@@ -66,6 +66,16 @@ export default function AboutPage() {
         imageAlt="Warm, softly lit living room with heated wooden flooring"
       />
 
+      {/* Timeline */}
+      <section className="container-site py-24 md:py-32">
+        <SectionHeading
+          eyebrow="The journey"
+          title="Fourteen years, one warm line"
+          align="center"
+        />
+        <SpiralTimeline milestones={milestones} className="mt-16" />
+      </section>
+
       {/* Story */}
       <section className="container-site grid items-center gap-12 py-24 md:py-32 lg:grid-cols-2 lg:gap-20">
         <Reveal className="relative">
@@ -144,15 +154,8 @@ export default function AboutPage() {
 
       <Team />
 
-      {/* Timeline */}
-      <section className="container-site py-24 md:py-32">
-        <SectionHeading
-          eyebrow="The journey"
-          title="Fourteen years, one warm line"
-          align="center"
-        />
-        <SpiralTimeline milestones={milestones} className="mt-16" />
-        <Reveal className="mt-16 text-center">
+      <section className="container-site pb-24 md:pb-32">
+        <Reveal className="text-center">
           <Button asChild size="lg">
             <Link href="/services">
               See how we work

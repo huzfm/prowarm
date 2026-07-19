@@ -46,17 +46,26 @@ export function ProductExplorer({ products }: { products: Product[] }) {
 
   return (
     <div>
-      <div className="sticky top-20 z-30 -mx-4 rounded-card border border-charcoal-900/8 bg-cream-100/80 px-4 py-4 shadow-[0_8px_24px_-16px_rgb(26_26_26/0.25)] backdrop-blur-xl md:top-24 md:mx-0 md:px-6">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          {/* Category filter pills */}
-          <div role="group" aria-label="Filter by category" className="flex flex-wrap gap-2">
+      <div className="rounded-card border border-charcoal-900/8 bg-white/60 p-4 md:px-6 md:py-5">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
+          {/*
+            Category pills. Six longish labels wrap to three cramped rows on a
+            phone, so below md they become one edge-to-edge scrollable strip
+            (bleeding into the card padding to hint there's more to the right);
+            from md they wrap normally.
+          */}
+          <div
+            role="group"
+            aria-label="Filter by category"
+            className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-2 overflow-x-auto px-4 md:mx-0 md:flex-wrap md:overflow-visible md:px-0"
+          >
             {categories.map((c) => (
               <button
                 key={c.value}
                 onClick={() => setCategory(c.value)}
                 aria-pressed={category === c.value}
                 className={cn(
-                  "cursor-pointer rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-300",
+                  "shrink-0 snap-start cursor-pointer rounded-full border px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors duration-300",
                   category === c.value
                     ? "border-charcoal-900 bg-charcoal-900 text-white"
                     : "border-charcoal-900/15 bg-white text-charcoal-600 hover:border-charcoal-900/40 hover:text-charcoal-900"
@@ -67,16 +76,19 @@ export function ProductExplorer({ products }: { products: Product[] }) {
             ))}
           </div>
 
-          {/* Sort */}
-          <div className="flex items-center gap-3">
-            <label htmlFor="product-sort" className="text-sm text-charcoal-500">
+          {/* Sort: full width under the pills on mobile, inline from md. */}
+          <div className="flex items-center gap-3 md:shrink-0">
+            <label
+              htmlFor="product-sort"
+              className="shrink-0 text-sm text-charcoal-500"
+            >
               Sort
             </label>
             <select
               id="product-sort"
               value={sort}
               onChange={(e) => setSort(e.target.value as SortKey)}
-              className="h-10 cursor-pointer rounded-field border border-charcoal-900/15 bg-white px-3 text-sm text-charcoal-800 focus:border-copper-500 focus:outline-none"
+              className="h-10 w-full cursor-pointer rounded-field border border-charcoal-900/15 bg-white px-3 text-sm text-charcoal-800 focus:border-copper-500 focus:outline-none md:w-auto"
             >
               {sortOptions.map((o) => (
                 <option key={o.value} value={o.value}>

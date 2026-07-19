@@ -137,6 +137,16 @@
   }
 }
 
+/* Scrollable rows that shouldn't show a bar (mobile filter strips, etc.). */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Type scale — one place, reused across every page. */
 @utility text-display-1 {
   font-family: var(--font-display);
