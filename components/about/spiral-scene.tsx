@@ -13,7 +13,7 @@ export interface SpiralSceneProps {
   /** Hands the parent this canvas's on-demand render trigger. */
   registerInvalidate: (fn: (() => void) | null) => void;
 }
-
+// hi this is kamran
 // Helix proportions, loosely after a spiral staircase: a dark central pole,
 // wood-toned steps winding upward, a thin rail running through the nodes.
 const RADIUS = 2.1;
