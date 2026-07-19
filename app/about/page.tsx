@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { ArrowRight, Compass, HeartHandshake, Ruler, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
-import { JourneyTrack } from "@/components/about/journey-track";
+import { SpiralTimeline } from "@/components/about/spiral-timeline";
 import { Team } from "@/components/about/team";
 import { CtaBanner } from "@/components/cta-banner";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
@@ -151,7 +151,7 @@ export default function AboutPage() {
           title="Fourteen years, one warm line"
           align="center"
         />
-        <JourneyTrack milestones={milestones} className="mt-16" />
+        <SpiralTimeline milestones={milestones} className="mt-16" />
         <Reveal className="mt-16 text-center">
           <Button asChild size="lg">
             <Link href="/services">
