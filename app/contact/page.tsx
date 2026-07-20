@@ -43,7 +43,7 @@ export default function ContactPage() {
         imageAlt="Contemporary living space warmed by an underfloor heating system"
       />
 
-      <section className="relative isolate overflow-hidden py-24 md:py-32">
+      <section className="relative isolate overflow-hidden py-16 sm:py-24 md:py-32">
         {/* Warm wash + hairline grid, echoing the testimonials stage. */}
         <div
           aria-hidden
@@ -69,13 +69,13 @@ export default function ContactPage() {
           }}
         />
 
-        <div className="container-site grid gap-12 lg:grid-cols-5 lg:gap-16">
+        <div className="container-site grid gap-8 sm:gap-12 lg:grid-cols-5 lg:gap-16">
           <Reveal className="max-w-none lg:col-span-3">
-            <div className="group relative rounded-card border border-charcoal-900/8 bg-white/85 p-7 shadow-card-hover backdrop-blur-xl md:p-10">
+            <div className="group relative rounded-card border border-charcoal-900/8 bg-white/85 p-5 shadow-card-hover backdrop-blur-xl sm:p-8 md:p-10">
               {/* Copper hairline along the top edge of the card. */}
               <span
                 aria-hidden
-                className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-copper-500/70 to-transparent"
+                className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-copper-500/70 to-transparent sm:inset-x-8"
               />
               <p className="text-eyebrow text-copper-600">Step 01</p>
               <h2 className="mt-4 text-display-3 text-charcoal-900">
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 Rooms, floor finish and city are the three details that speed
                 everything up.
               </p>
-              <div className="mt-9 border-t border-charcoal-900/8 pt-9">
+              <div className="mt-7 border-t border-charcoal-900/8 pt-7 sm:mt-9 sm:pt-9">
                 <ContactForm />
               </div>
             </div>
@@ -99,15 +99,15 @@ export default function ContactPage() {
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
                     rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group relative flex items-start gap-5 overflow-hidden rounded-card border border-charcoal-900/8 bg-white/80 p-6 shadow-card backdrop-blur-xl transition-[transform,box-shadow,border-color] duration-500 ease-(--ease-out-quart) hover:-translate-y-1 hover:border-copper-500/35 hover:shadow-card-hover motion-reduce:hover:translate-y-0"
+                    className="group relative flex items-start gap-4 overflow-hidden rounded-card border border-charcoal-900/8 bg-white/80 p-5 shadow-card backdrop-blur-xl sm:gap-5 sm:p-6 transition-[transform,box-shadow,border-color] duration-500 ease-(--ease-out-quart) hover:-translate-y-1 hover:border-copper-500/35 hover:shadow-card-hover motion-reduce:hover:translate-y-0"
                   >
                     {/* Copper wash that sweeps in from the left on hover. */}
                     <span
                       aria-hidden
                       className="absolute inset-0 -z-10 bg-gradient-to-r from-copper-50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     />
-                    <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-copper-100 text-copper-600 transition-all duration-500 ease-(--ease-out-quart) group-hover:scale-105 group-hover:bg-copper-500 group-hover:text-white motion-reduce:group-hover:scale-100">
-                      <Icon className="size-6" aria-hidden />
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-copper-100 text-copper-600 transition-all duration-500 ease-(--ease-out-quart) group-hover:scale-105 group-hover:bg-copper-500 group-hover:text-white motion-reduce:group-hover:scale-100 sm:size-12">
+                      <Icon className="size-5 sm:size-6" aria-hidden />
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="flex items-center gap-2">
@@ -118,7 +118,7 @@ export default function ContactPage() {
                           {title}
                         </span>
                       </span>
-                      <span className="mt-1 block truncate text-sm font-medium text-charcoal-700">
+                      <span className="mt-1 block text-sm font-medium break-words text-charcoal-700">
                         {lines[0]}
                       </span>
                       <span className="mt-0.5 block text-sm text-charcoal-400">
@@ -134,7 +134,7 @@ export default function ContactPage() {
               ))}
 
               <RevealItem>
-                <div className="relative overflow-hidden rounded-card bg-charcoal-950 p-7 text-white">
+                <div className="relative overflow-hidden rounded-card bg-charcoal-950 p-5 text-white sm:p-7">
                   <span
                     aria-hidden
                     className="pointer-events-none absolute inset-0"
@@ -143,11 +143,11 @@ export default function ContactPage() {
                         "radial-gradient(28rem 18rem at 100% 0%, rgb(200 118 58 / 0.3), transparent 65%)",
                     }}
                   />
-                  <div className="relative flex gap-5">
-                    <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-copper-400/30 bg-copper-500/15 text-copper-300">
-                      <Clock className="size-6" aria-hidden />
+                  <div className="relative flex gap-4 sm:gap-5">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl border border-copper-400/30 bg-copper-500/15 text-copper-300 sm:size-12">
+                      <Clock className="size-5 sm:size-6" aria-hidden />
                     </span>
-                    <div>
+                    <div className="min-w-0">
                       <p className="font-display text-lg text-white">
                         Planning a winter project?
                       </p>
@@ -165,7 +165,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map */}
-      <section className="container-site pb-24 md:pb-32" aria-label="Our location">
+      <section className="container-site pb-16 sm:pb-24 md:pb-32" aria-label="Our location">
         <Reveal className="max-w-none">
           <div className="relative overflow-hidden rounded-card border border-charcoal-900/8 shadow-card-hover">
             <iframe
@@ -175,12 +175,13 @@ export default function ContactPage() {
               height="480"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="block w-full border-0 grayscale-[0.55] contrast-[1.05] transition-[filter] duration-700 hover:grayscale-0"
+              className="block h-80 w-full border-0 grayscale-[0.55] contrast-[1.05] transition-[filter] duration-700 hover:grayscale-0 sm:h-[480px]"
             />
-            {/* Floating address card — pointer-events only on the card itself
-                so the map stays draggable underneath. */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 sm:inset-y-0 sm:right-auto sm:left-0 sm:grid sm:place-items-center sm:p-8">
-              <div className="pointer-events-auto max-w-xs rounded-card border border-white/60 bg-white/85 p-6 shadow-card-hover backdrop-blur-xl">
+            {/* Below the map on phones, where an overlay would swallow it; from
+                sm up it floats, with pointer-events only on the card itself so
+                the map stays draggable underneath. */}
+            <div className="p-4 sm:pointer-events-none sm:absolute sm:inset-y-0 sm:right-auto sm:left-0 sm:grid sm:place-items-center sm:p-8">
+              <div className="rounded-card border border-charcoal-900/10 bg-white p-5 backdrop-blur-xl sm:pointer-events-auto sm:max-w-xs sm:border-white/60 sm:bg-white/85 sm:p-6 sm:shadow-card-hover">
                 <p className="text-eyebrow text-copper-600">The demo floor</p>
                 <p className="mt-3 font-display text-lg leading-snug text-charcoal-900">
                   {siteConfig.address}
