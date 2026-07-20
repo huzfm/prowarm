@@ -1,6 +1,9 @@
-﻿import Image from "next/image";
+﻿
+
+
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Compass, HeartHandshake, Ruler, ShieldCheck } from "lucide-react";
+import { ArrowRight, Compass, HeartHandshake, Home, Ruler, ShieldCheck, Waves } from "lucide-react";
 import type { Metadata } from "next";
 import { SpiralTimeline } from "@/components/about/spiral-timeline";
 import { Team } from "@/components/about/team";
@@ -56,18 +59,43 @@ export default function AboutPage() {
         eyebrow="About ProWarm"
         title={
           <>
-            We exist so Indian winters
+            We exist so
             <br />
-            end at the front door.
+            Indian winters
+            <br />
+            end at the{" "}
+            <span className="font-serif text-copper-400 italic">
+              front door
+            </span>
+            <span className="text-white/40">.</span>
           </>
         }
         lead="ProWarm India designs, installs and stands behind underfloor heating that disappears into the architecture  and stays out of your electricity bill."
-        image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2400&auto=format&fit=crop"
+        image="/about.png"
         imageAlt="Warm, softly lit living room with heated wooden flooring"
+        features={[
+          {
+            icon: <Home className="size-4.5" strokeWidth={1.75} aria-hidden />,
+            title: "Designed in India",
+            subtitle: "For Indian Homes",
+          },
+          {
+            icon: <Waves className="size-4.5" strokeWidth={1.75} aria-hidden />,
+            title: "Invisible Comfort",
+            subtitle: "Underfloor Heating",
+          },
+          {
+            icon: <ShieldCheck className="size-4.5" strokeWidth={1.75} aria-hidden />,
+            title: "Trusted by 1000+",
+            subtitle: "Homes Across India",
+          },
+        ]}
+        discoverLabel="Discover Our Story"
+        discoverHref="#journey"
       />
 
       {/* Timeline */}
-      <section className="container-site py-24 md:py-32">
+      <section id="journey" className="container-site py-24 md:py-32">
         <SectionHeading
           eyebrow="The journey"
           title="Fourteen years, one warm line"
@@ -154,7 +182,7 @@ export default function AboutPage() {
 
       <Team />
 
-      <section className="container-site pb-24 md:pb-32">
+      {/* <section className="container-site pb-24 md:pb-32">
         <Reveal className="text-center">
           <Button asChild size="lg">
             <Link href="/services">
@@ -163,7 +191,7 @@ export default function AboutPage() {
             </Link>
           </Button>
         </Reveal>
-      </section>
+      </section> */}
 
       <CtaBanner
         title="Add your winter to the story"

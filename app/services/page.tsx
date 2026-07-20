@@ -1,11 +1,19 @@
-﻿import Link from "next/link";
+﻿
+
+
+import Link from "next/link";
 import {
   ArrowRight,
   ClipboardCheck,
+  Compass,
   Droplets,
+  Headphones,
   Layers,
   LifeBuoy,
+  Ruler,
+  ShieldCheck,
   SmartphoneNfc,
+  Thermometer,
   Zap,
 } from "lucide-react";
 import type { Metadata } from "next";
@@ -87,18 +95,46 @@ export default function ServicesPage() {
         eyebrow="Services"
         title={
           <>
-            Designed, installed,
+            Designed,
             <br />
-            answered for.
+            installed,
+            <br />
+            <span className="text-copper-500">answered for.</span>
           </>
         }
         lead="We don't sell boxes of heating mat. We deliver warm floors  surveyed, engineered, installed by our own crews and supported for decades."
-        image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2400&auto=format&fit=crop"
-        imageAlt="Installer carefully laying an underfloor heating system on a prepared floor"
+        image="/service.png"
+        imageAlt="Installers cutting reinforcement steel on a construction site, preparing for underfloor heating installation"
+        afterTitleRule
+        features={[
+          {
+            icon: <Ruler className="size-5.5" strokeWidth={1.5} aria-hidden />,
+            title: "Engineered for Performance",
+          },
+          {
+            icon: <ShieldCheck className="size-5.5" strokeWidth={1.5} aria-hidden />,
+            title: "Installed by Experts",
+          },
+          {
+            icon: <Thermometer className="size-5.5" strokeWidth={1.5} aria-hidden />,
+            title: "Built for Indian Homes",
+          },
+          {
+            icon: <Headphones className="size-5.5" strokeWidth={1.5} aria-hidden />,
+            title: "Backed by Support",
+          },
+        ]}
+        featuresLayout="stacked"
       >
         <Button asChild size="lg">
           <Link href="/contact">
-            Book a free survey
+            Book a Site Survey
+            <ArrowRight aria-hidden />
+          </Link>
+        </Button>
+        <Button asChild size="lg" variant="outline-light">
+          <Link href="/projects">
+            Explore Our Work
             <ArrowRight aria-hidden />
           </Link>
         </Button>
