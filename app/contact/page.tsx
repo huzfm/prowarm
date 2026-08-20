@@ -82,8 +82,8 @@ export default function ContactPage() {
                 Send us a message
               </h2>
               <p className="mt-3 max-w-md text-charcoal-500">
-                Rooms, floor finish and city are the three details that speed
-                everything up.
+                Your name, a number we can reach you on, and where the floor is — that
+                is all we need to book a survey.
               </p>
               <div className="mt-7 border-t border-charcoal-900/8 pt-7 sm:mt-9 sm:pt-9">
                 <ContactForm />

@@ -72,6 +72,9 @@ export default function RootLayout({
           <Footer />
           <Toaster
             position="bottom-right"
+            // Our toasts are charcoal; without the dark theme sonner paints
+            // descriptions near-black (#3f3f3f) and they vanish into the card.
+            theme="dark"
             toastOptions={{
               style: {
                 background: "var(--color-charcoal-900)",
