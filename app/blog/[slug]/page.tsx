@@ -11,13 +11,11 @@ import { CtaBanner } from "@/components/cta-banner";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
-import { getAllPosts, getPostSource, getRelatedPosts, getToc } from "@/lib/blog";
+import { getPostSource, getRelatedPosts, getToc } from "@/lib/blog";
 import { siteConfig } from "@/lib/site";
 import { formatDate } from "@/lib/utils";
 
-export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
@@ -25,19 +23,20 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostSource(slug);
+  const post = await getPostSource(slug);
   if (!post) return {};
-  const { meta } = post;
+  const meta = post;
   return {
-    title: meta.title,
-    description: meta.excerpt,
+    title: meta.seoTitle ?? meta.title,
+    description: meta.seoDescription ?? meta.excerpt,
+    alternates: meta.canonicalUrl ? { canonical: meta.canonicalUrl } : undefined,
     openGraph: {
       type: "article",
       title: meta.title,
       description: meta.excerpt,
       publishedTime: meta.date,
       authors: [meta.author.name],
-      images: [{ url: meta.image }],
+      images: [{ url: meta.seoImage ?? meta.image }],
     },
   };
 }
@@ -48,12 +47,13 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostSource(slug);
+  const post = await getPostSource(slug);
   if (!post) notFound();
 
-  const { meta, content } = post;
+  const meta = post;
+  const { content } = post;
   const toc = getToc(content);
-  const related = getRelatedPosts(slug, meta.category);
+  const related = await getRelatedPosts(slug, meta.category);
   const url = `${siteConfig.url}/blog/${slug}`;
 
   return (
@@ -81,6 +81,10 @@ export default async function BlogPostPage({
                 .join("")}
             </span>
             <div>
+
+            {meta.schemaMarkup && (
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: meta.schemaMarkup }} />
+            )}
               <p className="font-medium">{meta.author.name}</p>
               <p className="text-sm text-white/50">
                 {meta.author.role} · <time dateTime={meta.date}>{formatDate(meta.date)}</time>
@@ -107,7 +111,7 @@ export default async function BlogPostPage({
       {/* Body + TOC */}
       <div className="container-site grid gap-12 py-16 md:py-20 lg:grid-cols-[1fr_16rem] lg:gap-16">
         <article className="mx-auto w-full max-w-2xl min-w-0 lg:mx-0 lg:ml-auto">
-          <MDXContent source={content} />
+          <MDXContent source={content} html />
 
           <div className="mt-12 flex flex-wrap items-center justify-between gap-6 border-t border-charcoal-900/10 pt-8">
             <div className="flex flex-wrap gap-2">

@@ -20,7 +20,7 @@ app/                    Routes (App Router)
   page.tsx              Home  hero, stats, pinned benefits, products, testimonials, blog, CTA
   about/ services/ contact/
   products/             Filterable grid (+ [slug] detail pages, statically generated)
-  blog/                 Search/filter/pagination (+ [slug] article pages from MDX)
+  blog/                 Search/filter/pagination (+ [slug] article pages from the Blog API)
   layout.tsx            Fonts, metadata, navbar/footer, providers, toaster
   template.tsx          Route-change fade transition
   globals.css           ALL design tokens (Tailwind v4 @theme) + type-scale utilities
@@ -31,18 +31,29 @@ components/
   motion/               Reveal/RevealGroup, Counter, Parallax, Magnetic, Marquee
   ui/                   Restyled shadcn-style primitives (button, input, accordion, tabs…)
   home/ about/ services/ contact/ products/ blog/   Page-specific sections
-content/blog/*.mdx      Blog posts (frontmatter + MDX body)
+content/blog/*.mdx      Legacy local posts (not used by the blog routes)
 lib/
   site.ts               Site config: name, contacts, socials, stats, testimonials, partners
   products.ts           Product catalogue (the "CMS" for products)
-  blog.ts               MDX reading, TOC extraction, related posts
+  blog.ts               Blog API client, normalization, TOC extraction, related posts
 ```
+
+## Blog API configuration
+
+Set these server-only environment variables before starting the app:
+
+```bash
+PROWARM_BLOG_API_BASE_URL=http://localhost:5050/api/public
+PROWARM_BLOG_API_KEY=thsk_your_real_key
+```
+
+The blog list, article pages, homepage articles and sitemap use the authenticated API. The API key is never exposed to the browser.
 
 ## Swapping in real content
 
 - **Copy & contact details**  edit `lib/site.ts` (one file: address, phone, socials, stats, testimonials, partner names).
 - **Products**  edit `lib/products.ts`. Each product is a typed object (name, price, specs, features, images). Detail pages are generated automatically from the array.
-- **Blog posts**  drop a `.mdx` file into `content/blog/`. Frontmatter needs `title`, `excerpt`, `date`, `category`, `tags`, `image`, `imageAlt`, `author{name, role}`. Reading time, TOC, related posts, sitemap entries and static generation all happen automatically.
+- **Blog posts**  publish them through the Blog API described above. Reading time, TOC, related posts and sitemap entries are derived from API responses.
 - **Images**  currently Unsplash URLs. Replace `src` values in `lib/products.ts`, the blog frontmatter, and the hero/section components (`components/home/hero.tsx`, `components/home/benefits-pinned.tsx`, `components/about/team.tsx`, `app/about/page.tsx`). For local files, put them in `public/` and remove the `remotePatterns` entry in `next.config.ts` if unused. A hero **video** can replace the `<Image>` in `components/home/hero.tsx` with a muted, autoplaying `<video>`  the parallax wrapper works unchanged.
 - **Forms**  the contact form and newsletter simulate a send (see `components/contact/contact-form.tsx`, `components/layout/newsletter-form.tsx`). Point the marked `// Simulated…` blocks at a route handler, server action, or service like Resend/Formspree.
 - **Domain**  `lib/site.ts` `url` drives `metadataBase`, the sitemap and share links.
@@ -63,4 +74,4 @@ All tokens live in `app/globals.css` under `@theme` (Tailwind v4's CSS-first con
 
 ## Deployment
 
-Ready for Vercel  no env vars needed. Every route is statically generated at build time.
+Deploy with `PROWARM_BLOG_API_BASE_URL` and `PROWARM_BLOG_API_KEY` configured in the hosting environment. Blog content is fetched server-side at request time.

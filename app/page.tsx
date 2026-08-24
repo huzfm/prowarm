@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     "Electric and water-based underfloor heating for Indian homes  designed, installed and guaranteed for 10 years. Warm floors, 40% lower running costs.",
 };
 
-export default function HomePage() {
+export default async function HomePage() {
   const featured = getFeaturedProducts();
-  const latestPosts = getAllPosts().slice(0, 3);
+  const latestPosts = (await getAllPosts()).slice(0, 3);
 
   return (
     <>

@@ -93,7 +93,11 @@ const components: MDXComponents = {
 };
 
 /** Compiles and renders an MDX source string on the server. */
-export async function MDXContent({ source }: { source: string }) {
+export async function MDXContent({ source, html = false }: { source: string; html?: boolean }) {
+  if (html) {
+    return <div className="blog-html" dangerouslySetInnerHTML={{ __html: source }} />;
+  }
+
   const { default: Content } = await evaluate(source, {
     ...runtime,
     development: false,

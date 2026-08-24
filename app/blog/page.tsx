@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     "Honest costs, design guides and engineering notes on underfloor heating in India  from the ProWarm team.",
 };
 
-export default function BlogPage() {
-  const posts = getAllPosts();
-  const categories = getBlogCategories();
+export default async function BlogPage() {
+  const posts = await getAllPosts();
+  const categories = getBlogCategories(posts);
 
   return (
     <>
