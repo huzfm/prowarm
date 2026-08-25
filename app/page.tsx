@@ -17,6 +17,8 @@ import { toStackedProduct } from "@/lib/product-deck";
 import { getFeaturedProducts } from "@/lib/products";
 import { partners } from "@/lib/site";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "ProWarm India  Underfloor Heating Solutions",
   description:

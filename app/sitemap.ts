@@ -3,6 +3,8 @@ import { getAllPosts } from "@/lib/blog";
 import { products } from "@/lib/products";
 import { siteConfig } from "@/lib/site";
 
+export const dynamic = "force-dynamic";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
