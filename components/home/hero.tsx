@@ -5,7 +5,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Parallax } from "@/components/motion/parallax";
 import { Button } from "@/components/ui/button";
 
@@ -72,38 +72,28 @@ export function Hero() {
       <div className="container-site relative z-10 flex flex-1 flex-col justify-center pb-4">
         <motion.p
           {...enter(0)}
-          className="text-xs font-medium tracking-[0.3em] text-[#C9A876] uppercase"
+          className="text-sm font-medium tracking-[0.3em] text-[#C9A876] uppercase"
         >
           Premium Radiant Floor Heating
         </motion.p>
 
         <motion.h1
-          {...enter(0.1)}
-          className="mt-6 max-w-2xl font-serif text-6xl leading-[1.12] font-normal text-white md:text-[4.75rem]"
+          {...enter(0.05)}
+          className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-tight text-white md:text-6xl"
         >
-          Invisible
-          <br />
-          Warmth.
-          <br />
-          Visible Luxury.
+          Heating equipment supplier in Srinagar, Jammu &amp; Kashmir
         </motion.h1>
 
-        <motion.span
-          {...enter(0.24)}
-          className="mt-8 block h-px w-14 bg-white/25"
-          aria-hidden
-        />
-
-        <motion.div {...enter(0.3)} className="mt-6 space-y-1">
-          <p className="text-white/65">Engineered for modern Indian homes.</p>
-          <p className="text-white/65">
-            Comfort you feel. Technology you don&apos;t see.
-          </p>
-        </motion.div>
+        <motion.h2
+          {...enter(0.1)}
+          className="mt-4 max-w-2xl text-xl text-white/60 md:text-2xl"
+        >
+          We install Electric Hamam to get you the underfloor heating in Srinagar, Jammu &amp; Kashmir.
+        </motion.h2>
 
         <motion.div
           {...enter(0.42)}
-          className="mt-10 flex flex-wrap items-center gap-8"
+          className="mt-8 flex flex-wrap items-center gap-8"
         >
           <ShineButton>
             <Button
@@ -117,16 +107,6 @@ export function Hero() {
               </Link>
             </Button>
           </ShineButton>
-
-          <Link
-            href="/installation-film"
-            className="group flex items-center gap-3 text-xs font-medium tracking-[0.15em] text-white uppercase transition-colors hover:text-white/70"
-          >
-            <span className="flex size-9 items-center justify-center rounded-full border border-white/30 transition-colors group-hover:border-white/60">
-              <Play className="size-3.5 translate-x-px" aria-hidden />
-            </span>
-            Watch Film
-          </Link>
         </motion.div>
       </div>
 

@@ -1,13 +1,13 @@
 ﻿export const siteConfig = {
-  name: "ProWarm India",
+  name: "ProWarm Electric Hamam",
   url: "https://prowarm.in",
   tagline: "Underfloor heating, engineered for Indian homes.",
   description:
     "ProWarm India designs and installs electric and water-based underfloor heating systems, smart thermostats and insulation  invisible warmth for tile, stone, laminate and wood floors across India.",
   email: "hello@prowarm.in",
-  phone: "+91 98110 40040",
-  address: "Unit 12, Sun Mill Compound, Lower Parel, Mumbai 400013",
-  mapQuery: "Sun Mill Compound, Lower Parel, Mumbai",
+  phone: "90709 07016",
+  address: "Prowarm Electric Hamam\nnear by masjid baitul kareem, Housing Colony, Bemina, Srinagar, Jammu and Kashmir 190018",
+  mapQuery: "Prowarm Electric Hamam, Bemina, Srinagar, Jammu and Kashmir",
   social: {
     instagram: "https://instagram.com/prowarmindia",
     facebook: "https://facebook.com/prowarmindia",

@@ -36,7 +36,7 @@ export function Footer() {
               <Flame className="size-4.5" aria-hidden />
             </span>
             <span className="font-display text-xl font-semibold tracking-tight">
-              ProWarm<span className="text-copper-400"> India</span>
+              Prowarm<span className="text-copper-400"> Electric Hamam</span>
             </span>
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
@@ -46,7 +46,7 @@ export function Footer() {
           <ul className="mt-6 space-y-3 text-sm text-white/70">
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-copper-400" aria-hidden />
-              {siteConfig.address}
+              <span className="whitespace-pre-line">{siteConfig.address}</span>
             </li>
             <li className="flex items-center gap-3">
               <Phone className="size-4 shrink-0 text-copper-400" aria-hidden />
@@ -61,6 +61,19 @@ export function Footer() {
               </a>
             </li>
           </ul>
+          <div className="mt-6">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105711.43219198096!2d74.68079973410848!3d34.10840161123923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e1913da97b8051%3A0xfb907d44c88008f7!2sProwarm%20Electric%20Hamam!5e0!3m2!1sen!2sin!4v1775016186631!5m2!1sen!2sin"
+              width="100%"
+              height="250"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+              title="Prowarm Electric Hamam Location"
+            />
+          </div>
         </div>
 
         <nav aria-label="Explore" className="lg:col-span-2">
@@ -117,7 +130,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
-          <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Prowarm Electric Hamam. All rights reserved.</p>
           <p>10-year warranty on every heating system we install.</p>
         </div>
       </div>

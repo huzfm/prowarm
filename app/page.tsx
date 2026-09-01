@@ -20,7 +20,7 @@ import { partners } from "@/lib/site";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "ProWarm India  Underfloor Heating Solutions",
+  title: "BEST Heating equipment supplier Kashmir - if you're looking for Electric hamam near me or Underfloor Heating near me - Prowarm Electric Hamam is the place to be",
   description:
     "Electric and water-based underfloor heating for Indian homes  designed, installed and guaranteed for 10 years. Warm floors, 40% lower running costs.",
 };
